@@ -30,7 +30,7 @@ Use Node.js 24. On this Windows workstation: `powershell -File scripts/run.ps1 t
 
 Live: https://tidewater-neighborhood.vercel.app
 
-Public repository: https://github.com/Aadit28/tidewater-neighborhood (anonymous GitHub API read confirmed HTTP 200 and `private: false`). GitHub creation time is October 21, 2026 UTC, which is October 20 in the team's America/Los_Angeles timezone. All commits in this fresh repository use actual development timestamps.
+Public repository: https://github.com/Aadit28/tidewater (anonymous GitHub API read confirmed HTTP 200 and `private: false`). GitHub creation time is October 21, 2026 UTC, which is October 20 in the team's America/Los_Angeles timezone. All commits in this fresh repository use actual development timestamps.
 
 Vercel production deployment `dpl_DbARG6sj2LVYcYTxzvqUVgiArMzp` reached READY and was aliased to the live URL. Its commit metadata identifies `7025b8838a768443edddd007d48973d67a11a9c9`. This final verification note is a subsequent documentation-only commit; deployed application source is unchanged.
 

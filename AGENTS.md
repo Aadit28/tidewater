@@ -1,4 +1,4 @@
-# Tidewater Neighborhood edition
+# Tidewater
 
 Implement new source here. Do not copy application source, designs, or datasets from the old Tidewater app, and do not rewrite or backdate commit history. Disclose the previously explored idea and AI assistance.
 

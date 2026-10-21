@@ -2,7 +2,7 @@
 
 A fresh coastal reporting and volunteer-task prototype, started on October 20, 2026 for the October 16–23 Neighborhood Hacks build window.
 
-**Live demo:** https://tidewater-neighborhood.vercel.app · **Public source:** https://github.com/Aadit28/tidewater-neighborhood
+**Live demo:** https://tidewater-neighborhood.vercel.app · **Public source:** https://github.com/Aadit28/tidewater
 
 ## Provenance and disclosure
 
