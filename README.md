@@ -1,4 +1,4 @@
-# Tidewater · Neighborhood edition
+# Tidewater
 
 A fresh coastal reporting and volunteer-task prototype, started on October 20, 2026 for the October 16–23 Neighborhood Hacks build window.
 

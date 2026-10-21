@@ -1,4 +1,4 @@
-# New demo · Neighborhood edition
+# Tidewater demo guide
 
 Use this app, not the older Tidewater deployment or its screenshots. Initial records and teams are synthetic, and each visitor has a private workspace. Use a clearly labeled synthetic observation for the recording, without faces or personal details. Do not present a task completion as real cleanup.
 
