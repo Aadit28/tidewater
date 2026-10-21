@@ -37,3 +37,7 @@ Vercel production deployment `dpl_DbARG6sj2LVYcYTxzvqUVgiArMzp` reached READY an
 The complete Chromium browser suite was executed again against the public production URL: **6 passed in 12.7 seconds**, including actual image upload/retrieval, report/task persistence, team assignment, progress/completion, filters, map, activity, mobile viewport, and the authentication-outage test. Synthetic QA records remain in their test visitor's isolated workspace.
 
 The Vercel GitHub connection attempt was rejected with an account/repository-access error. Automatic deployments on pushes are not connected. The CLI production deployment succeeded independently. Future deployments can use `vercel --prod --scope flc-india`, or the owner can authorize the correct GitHub account in Vercel. No extra access was granted.
+
+## Map lifecycle correction
+
+Closing the development preview exposed an uncaught Leaflet zoom-animation callback after its map pane had been removed. The map now disables CSS zoom/fade/marker animations and stops movement before removal. The browser regression suite additionally checks for uncaught page errors and zooms immediately before navigating away. After this correction, lint and the type-checked production build passed, and the complete local browser suite passed **6/6 in 14.1 seconds**, with no uncaught page errors. Domain unit logic and database functions are unchanged; their earlier 15 unit and 31 database checks remain the applicable results.

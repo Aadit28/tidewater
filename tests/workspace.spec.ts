@@ -3,11 +3,14 @@ import type { BrowserContext, Page } from '@playwright/test';
 import path from 'node:path';
 test.describe.serial('new Tidewater real-backend workflow', () => {
   let context: BrowserContext; let page: Page;
+  const browserErrors: string[] = [];
   const title = `Synthetic browser observation ${Date.now()}`;
   test.beforeAll(async ({ browser, baseURL }) => {
     context = await browser.newContext({ baseURL, viewport: { width: 1440, height: 1000 } });
     page = await context.newPage();
+    page.on('pageerror', error => browserErrors.push(error.message));
   });
+  test.afterEach(() => { expect(browserErrors, 'No uncaught browser errors during the workflow').toEqual([]); });
   test.afterAll(async () => { await context?.close(); });
   test('fresh landing and guest workspace load', async () => {
     await page.goto('/');
@@ -67,6 +70,7 @@ test.describe.serial('new Tidewater real-backend workflow', () => {
     await expect(page.getByRole('dialog').getByText('Synthetic sample', { exact: true })).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).toHaveCount(0);
+    await page.getByRole('button', { name: 'Zoom in', exact: true }).click();
     await nav.getByRole('button', { name: 'Volunteer teams', exact: true }).click();
     await page.getByRole('button', { name: /sample team Shoreline Stewards/i }).click();
     await expect(page.getByRole('dialog').getByText('Collection bags', { exact: true })).toBeVisible();

@@ -11,7 +11,9 @@ export default function CoastMap({ reports = emptyReports, tasks = emptyTasks, o
   useEffect(() => { callbacks.current = { onSelect, onPick }; }, [onSelect, onPick]);
   useEffect(() => {
     if (!container.current) return;
-    const map = L.map(container.current, { scrollWheelZoom: false }).setView([31.417, -81.271], 13);
+    // This view is replaced when filters or locations change. Avoid a pending
+    // CSS zoom callback targeting a removed map pane during navigation.
+    const map = L.map(container.current, { scrollWheelZoom: false, zoomAnimation: false, fadeAnimation: false, markerZoomAnimation: false }).setView([31.417, -81.271], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
     const bounds: L.LatLngExpression[] = [];
     for (const report of reports) {
@@ -28,7 +30,7 @@ export default function CoastMap({ reports = emptyReports, tasks = emptyTasks, o
     } else if (bounds.length) map.fitBounds(L.latLngBounds(bounds), { padding: [42, 42], maxZoom: 14 });
     if (onPick) map.on('click', (event: L.LeafletMouseEvent) => callbacks.current.onPick?.(Number(event.latlng.lat.toFixed(5)), Number(event.latlng.lng.toFixed(5))));
     const observer = new ResizeObserver(() => map.invalidateSize()); observer.observe(container.current);
-    return () => { observer.disconnect(); map.remove(); };
+    return () => { observer.disconnect(); map.stop(); map.remove(); };
   }, [reports, tasks, pick, onPick]);
   return <div className="coast-map" ref={container} role="region" aria-label={onPick ? 'Choose report location on the map, or enter coordinates below' : 'Interactive coastal report map'} />;
 }
