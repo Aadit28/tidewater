@@ -5,7 +5,7 @@ import type { LucideIcon } from 'lucide-react';
 import { configured, createReport, loadWorkspace, openWorkspace, photoUrl, preparePhoto, taskCommand, uploadPhoto } from './api';
 import { categories, errorMessage, filterReports, formatDate, matchingPods, reportSchema, statusLabel, taskActions } from './domain';
 import type { Category, Pod, Report, ReportInput, Status, Task, Workspace } from './domain';
-import CoastMap from './CoastMap';
+import CoastMap from './MapPanel';
 
 type Page = 'Overview' | 'Coast map' | 'Reports' | 'Volunteer teams' | 'Tasks' | 'Activity';
 const navigation: { page: Page; icon: LucideIcon }[] = [{ page: 'Overview', icon: Compass }, { page: 'Coast map', icon: MapIcon }, { page: 'Reports', icon: Flag }, { page: 'Volunteer teams', icon: Users }, { page: 'Tasks', icon: ClipboardList }, { page: 'Activity', icon: ActivityIcon }];
