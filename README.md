@@ -2,6 +2,8 @@
 
 A fresh coastal reporting and volunteer-task prototype, started on October 20, 2026 for the October 16–23 Neighborhood Hacks build window.
 
+**Live demo:** https://tidewater-neighborhood.vercel.app · **Public source:** https://github.com/Aadit28/tidewater-neighborhood
+
 ## Provenance and disclosure
 
 This is a new implementation. No application source, designs, sample records, or Git history are copied from the earlier Tidewater repository. The name and general coastal-reporting idea were discussed before this build. The team previously evaluated and deployed an existing Tidewater application; that older application is not this submission. This repository's own commits record development as it happens, without backdating.

@@ -26,4 +26,14 @@ Only Chromium was exercised. The mobile check is browser emulation, not a physic
 
 Use Node.js 24. On this Windows workstation: `powershell -File scripts/run.ps1 typecheck` (replace the last argument with `lint`, `test`, `build`, or `test:database`). For browser tests, run the dev server on port 5177, install Chromium headless shell with `npx playwright install chromium-headless-shell`, then run `npm run test:browser`. Set `PLAYWRIGHT_BASE_URL` to test a deployed URL instead.
 
-Production deployment and hosted browser results are recorded separately after execution.
+## Production deployment and hosted verification
+
+Live: https://tidewater-neighborhood.vercel.app
+
+Public repository: https://github.com/Aadit28/tidewater-neighborhood (anonymous GitHub API read confirmed HTTP 200 and `private: false`). GitHub creation time is October 21, 2026 UTC, which is October 20 in the team's America/Los_Angeles timezone. All commits in this fresh repository use actual development timestamps.
+
+Vercel production deployment `dpl_DbARG6sj2LVYcYTxzvqUVgiArMzp` reached READY and was aliased to the live URL. Its commit metadata identifies `7025b8838a768443edddd007d48973d67a11a9c9`. This final verification note is a subsequent documentation-only commit; deployed application source is unchanged.
+
+The complete Chromium browser suite was executed again against the public production URL: **6 passed in 12.7 seconds**, including actual image upload/retrieval, report/task persistence, team assignment, progress/completion, filters, map, activity, mobile viewport, and the authentication-outage test. Synthetic QA records remain in their test visitor's isolated workspace.
+
+The Vercel GitHub connection attempt was rejected with an account/repository-access error. Automatic deployments on pushes are not connected. The CLI production deployment succeeded independently. Future deployments can use `vercel --prod --scope flc-india`, or the owner can authorize the correct GitHub account in Vercel. No extra access was granted.
